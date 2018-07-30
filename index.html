@@ -1,0 +1,358 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- swiper/fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .swiper-container {
+            width: 1580px;
+            height: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            max-width: 1580px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            height: 100px;
+            background-color: #245eaa;
+        }
+
+        .nav.color {
+            background-color: cadetblue;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 40px;
+            padding: 10px 0px;
+            font-weight: bold;
+            color: #245eaa;
+            float: left;
+            margin-right: 10%;
+        }
+
+        .menu {
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu>li {
+            display: inline-block;
+        }
+
+        .menu>li>a {
+            display: inline-block;
+            font-size: 30px;
+            padding: 45px 0;
+            padding-right: 15px;
+        }
+
+        /*滑鼠移過 字變色*/
+
+        .menu>li>a:hover {
+            color: #eda454;
+        }
+
+        .icon {
+            float: right;
+        }
+
+        .icon>li {
+            display: inline-block;
+        }
+
+        .icon>li>a {
+            display: inline-block;
+            font-size: 25px;
+            padding: 20px;
+        }
+
+        .footer_menu>li {
+            display: inline-block;
+        }
+
+        .footer_menu>li>a {
+            display: inline-block;
+            font-size: 15px;
+            margin-left: 20px;
+        }
+
+        .swiper-button-prev,
+        .swiper-container-rtl .swiper-button-next {
+            background-image: none;
+        }
+
+        .swiper-button-next,
+        .swiper-container-rtl .swiper-button-prev {
+            background-image: none;
+        }
+
+        /* 點點顏色 */
+
+        .swiper-pagination-bullet-active {
+            background: #0085ad;
+        }
+
+        .content {
+            max-width: 1580px;
+            margin: 0 auto;
+        }
+
+        .content_L {
+            float: left;
+            /* background-color: darkseagreen; */
+            /* 上右下左 */
+            margin: 30px 15px 15px 0px;
+        }
+
+        .content_R {
+            float: left;
+            /* background-color: #CCC; */
+            margin: 30px 0px 15px 0px;
+
+        }
+
+        .content_under {
+            width: 1565px;
+            height: 300px;
+            background-color: #b3b3b3;
+            clear: left;
+            margin-bottom: 30px;
+        }
+
+        .top_L {
+            width: 315px;
+            height: 285px;
+            margin-bottom: 15px;
+            background-color: #b3b3b3;
+        }
+
+        .top_R {
+            width: 1235px;
+            height: 600px;
+            margin-bottom: 15px;
+            background-color: #b3b3b3;
+
+
+        }
+
+        .mid_L {
+            width: 315px;
+            height: 715px;
+            margin-bottom: 15px;
+            background-color: #b3b3b3;
+
+
+        }
+
+        .mid_R {
+            width: 1235px;
+            height: 400px;
+            margin-bottom: 15px;
+            background-color: #b3b3b3;
+        }
+
+        .under_L {
+            width: 315px;
+            height: 400px;
+            background-color: #b3b3b3;
+        }
+
+        .under_R {
+            width: 1235px;
+            height: 400px;
+            background-color: #b3b3b3;
+        }
+
+        .footer {
+            height: 300px;
+            background-color: #b3b3b3;
+        }
+
+        .footer_logo {
+            font-size: 40px;
+            padding: 25px 0px;
+            font-weight: bold;
+            color: #245eaa;
+            padding: 30px calc(50% - 123px);
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+    <nav class="nav color">
+        <div class="container">
+            <div class="logo">
+                LOGO
+            </div>
+            <div>
+                <ul class="icon">
+                    <li>
+                        <a>
+                            <!--icon大小 fa-1x -->
+                            <i class="fas fa-user-alt fa-1x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="fas fa-sign-in-alt fa-1x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="fas fa-shopping-cart fa-1x"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav">
+        <div class="container">
+            <div class="">
+                <ul class="menu">
+                    <li>
+                        <a>雜誌</a>
+                    </li>
+                    <li>
+                        <a>文學</a>
+                    </li>
+                    <li>
+                        <a>小說</a>
+                    </li>
+                    <li>
+                        <a>漫畫</a>
+                    </li>
+                    <li>
+                        <a>商用書</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <!-- 輪播 -->
+            <div class="swiper-container" id="banner-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider"></div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- navigation buttons -->
+                <div class="swiper-button-prev">
+                    <i class="fas fa-caret-left fa-3x"></i>
+                </div>
+                <div class="swiper-button-next">
+                    <i class="fas fa-caret-right fa-3x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content_L">
+            <div class="top_L">
+                <div class="bw_title">本月75折</div>
+            </div>
+            <div class="mid_L">
+                <div class="bw_title">排行榜</div>
+            </div>
+            <div class="under_L">
+                <div class="bw_title">社群連結</div>
+            </div>
+        </div>
+        <div class="content_R">
+            <div class="top_R">
+                <div class="bw_title">暢銷書籍</div>
+            </div>
+            <div class="mid_R">
+                <div class="bw_title">新書上架</div>
+            </div>
+            <div class="under_R">
+                <div class="bw_title">期間限定免費下載</div>
+            </div>
+        </div>
+        <div class="content_under">
+            <div class="bw_title">出版社一覽</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <footer class="footer">
+        <div class="footer_logo">
+            <a>LOGO</a>
+        </div>
+        <div class="footer_link">
+            <ul class="footer_menu">
+                <li>
+                    <a>客服中心</a>
+                </li>
+                <li>
+                    <a>連絡我們</a>
+                </li>
+                <li>
+                    <a>服務條款</a>
+                </li>
+                <li>
+                    <a>關於我們</a>
+                </li>
+                <li>
+                    <a>隱私權政策</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            keyboard: {
+                enabled: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>
