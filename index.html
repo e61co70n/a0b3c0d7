@@ -16,31 +16,38 @@
             margin: 0;
         }
 
-        .swiper-container {
-            width: 1580px;
-            height: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         .container {
             max-width: 1580px;
             margin: 0 auto;
         }
+
+        /* 上面的NAV */
+
+        .nav_top {
+            height: 100px;
+            background-color: cadetblue;
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            z-index: 12;
+        }
+
+        /* 為了不蓋住下面的NAV */
+
+        .padding_top {
+            height: 70px;
+        }
+
+        /* 下面的NAV */
 
         .nav {
             height: 100px;
             background-color: #245eaa;
         }
 
-        .nav.color {
-            background-color: cadetblue;
-            height: 80px;
-        }
-
         .logo {
             font-size: 40px;
-            padding: 10px 0px;
+            padding: 15px 0px;
             font-weight: bold;
             color: #245eaa;
             float: left;
@@ -83,14 +90,11 @@
             padding: 20px;
         }
 
-        .footer_menu>li {
-            display: inline-block;
-        }
-
-        .footer_menu>li>a {
-            display: inline-block;
-            font-size: 15px;
-            margin-left: 20px;
+        .swiper-container {
+            width: 1580px;
+            height: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .swiper-button-prev,
@@ -157,6 +161,7 @@
             height: 715px;
             margin-bottom: 15px;
             background-color: #b3b3b3;
+            overflow: hidden;
 
 
         }
@@ -166,6 +171,24 @@
             height: 400px;
             margin-bottom: 15px;
             background-color: #b3b3b3;
+        }
+
+        .tab_btn {
+            display: inline-block;
+            padding: 10px  20px;
+            background-color: burlywood;
+        }
+
+        .tab_content {
+            margin: 0 5px 5px 5px;
+            height: 790px;
+            width: 305px;
+            background-color: yellowgreen;
+            display: none;
+        }
+
+        .tab_content.active {
+            display: block;
         }
 
         .under_L {
@@ -181,16 +204,37 @@
         }
 
         .footer {
-            height: 300px;
+            height: 200px;
             background-color: #b3b3b3;
+            text-align: center;
         }
 
         .footer_logo {
             font-size: 40px;
-            padding: 25px 0px;
+            padding: 25px;
             font-weight: bold;
             color: #245eaa;
-            padding: 30px calc(50% - 123px);
+            text-align: center;
+        }
+
+        .footer_menu>li {
+            display: inline-block;
+        }
+
+        .footer_menu>li>a {
+            display: inline-block;
+            font-size: 15px;
+            margin: 20px;
+        }
+
+        .box_title {
+            height: 18px;
+            padding: 5px 10px;
+            background-color: #245eaa;
+        }
+
+        .bw_title {
+            font-size: 18px;
         }
 
         .clear {
@@ -200,9 +244,11 @@
 </head>
 
 <body>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- swiper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
-    <nav class="nav color">
+    <nav class="nav_top">
         <div class="container">
             <div class="logo">
                 LOGO
@@ -230,6 +276,7 @@
             </div>
         </div>
     </nav>
+    <div class="padding_top"></div>
     <nav class="nav">
         <div class="container">
             <div class="">
@@ -286,28 +333,47 @@
     <div class="content">
         <div class="content_L">
             <div class="top_L">
-                <div class="bw_title">本月75折</div>
+                <div class="box_title">
+                    <div class="bw_title">本月75折</div>
+                </div>
             </div>
             <div class="mid_L">
-                <div class="bw_title">排行榜</div>
+                <div class="box_title">
+                    <div class="bw_title">排行榜</div>
+                </div>
+                <div class="tab_btn" id="tab_btn_1">本月TOP 10</div>
+                <div class="tab_btn" id="tab_btn_2">本週TOP 10</div>
+
+                <div class="tab_content active" id="tab_content_1">內容1</div>
+                <div class="tab_content" id="tab_content_2">內容2</div>
             </div>
             <div class="under_L">
-                <div class="bw_title">社群連結</div>
+                <div class="box_title">
+                    <div class="bw_title">社群連結</div>
+                </div>
             </div>
         </div>
         <div class="content_R">
             <div class="top_R">
-                <div class="bw_title">暢銷書籍</div>
+                <div class="box_title">
+                    <div class="bw_title">暢銷書籍</div>
+                </div>
             </div>
             <div class="mid_R">
-                <div class="bw_title">新書上架</div>
+                <div class="box_title">
+                    <div class="bw_title">新書上架</div>
+                </div>
             </div>
             <div class="under_R">
-                <div class="bw_title">期間限定免費下載</div>
+                <div class="box_title">
+                    <div class="bw_title">期間限定免費下載</div>
+                </div>
             </div>
         </div>
         <div class="content_under">
-            <div class="bw_title">出版社一覽</div>
+            <div class="box_title">
+                <div class="bw_title">出版社一覽</div>
+            </div>
         </div>
         <div class="clear"></div>
     </div>
@@ -351,6 +417,18 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+        });
+    </script>
+    <!-- 排行榜 -->
+    <script>
+        $("#tab_btn_1").click(function () {
+            $("#tab_content_1").addClass("active");
+            $("#tab_content_2").removeClass("active");
+        });
+
+        $("#tab_btn_2").click(function () {
+            $("#tab_content_1").removeClass("active");
+            $("#tab_content_2").addClass("active");
         });
     </script>
 </body>
