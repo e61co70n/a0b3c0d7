@@ -175,16 +175,18 @@
 
         .tab_btn {
             display: inline-block;
-            padding: 10px  20px;
-            background-color: burlywood;
+            padding: 15px 25px;
+            margin:5px 10px 0px 10px;
         }
 
         .tab_content {
-            margin: 0 5px 5px 5px;
             height: 790px;
-            width: 305px;
-            background-color: yellowgreen;
+            width: 315px;
             display: none;
+        }
+
+        .tab_color {
+            background-color: peru;
         }
 
         .tab_content.active {
@@ -341,10 +343,11 @@
                 <div class="box_title">
                     <div class="bw_title">排行榜</div>
                 </div>
-                <div class="tab_btn" id="tab_btn_1">本月TOP 10</div>
+                <!-- 一開始就顯示tab_color的顏色 -->
+                <div class="tab_btn tab_color" id="tab_btn_1">本月TOP 10</div>
                 <div class="tab_btn" id="tab_btn_2">本週TOP 10</div>
 
-                <div class="tab_content active" id="tab_content_1">內容1</div>
+                <div class="tab_content active tab_color" id="tab_content_1">內容1</div>
                 <div class="tab_content" id="tab_content_2">內容2</div>
             </div>
             <div class="under_L">
@@ -429,6 +432,26 @@
         $("#tab_btn_2").click(function () {
             $("#tab_content_1").removeClass("active");
             $("#tab_content_2").addClass("active");
+        });
+        // 改顏色
+        $("#tab_btn_1").click(function () {
+            $("#tab_content_1").addClass("tab_color");
+            $("#tab_content_2").removeClass("tab_color");
+        });
+
+        $("#tab_btn_2").click(function () {
+            $("#tab_content_1").removeClass("tab_color");
+            $("#tab_content_2").addClass("tab_color");
+        });
+
+        $("#tab_btn_1").click(function () {
+            $("#tab_btn_1").addClass("tab_color");
+            $("#tab_btn_2").removeClass("tab_color");
+        });
+
+        $("#tab_btn_2").click(function () {
+            $("#tab_btn_1").removeClass("tab_color");
+            $("#tab_btn_2").addClass("tab_color");
         });
     </script>
 </body>
